@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc0ce5e38c90d14dbc48598f7eb0538, type: 3}
+  m_Name: FruitMergeData
+  m_EditorClassIdentifier: 
+  listFruits:
+  - typeOrigin: 1
+    typeAfter: 3
+  - typeOrigin: 3
+    typeAfter: 0
+  - typeOrigin: 0
+    typeAfter: 4
+  - typeOrigin: 4
+    typeAfter: 2
+  - typeOrigin: 2
+    typeAfter: 6
+  - typeOrigin: 6
+    typeAfter: 7
+  - typeOrigin: 7
+    typeAfter: 5
+  - typeOrigin: 5
+    typeAfter: 1
