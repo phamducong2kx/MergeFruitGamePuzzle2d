@@ -22,11 +22,7 @@ public class InputHandler : MonoBehaviour
     public bool isClickUp = false;
     public bool clickButton = false;
 
-    //giới hạn tọa độ
-    [Header("gioi han toa do 2 ben tria phai")]
-    [SerializeField] private Transform limiteLeft;
-    [SerializeField] private Transform limiteRight;
-    [SerializeField] private float limitFloat;
+
 
     private void Awake()
     {
@@ -55,7 +51,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
 
-            HandlePositionMouse();
+            HandlePositionMouse(GameSystem.Instance.logicFruit.fruitCurrent.radius);
             //  Debug.Log("co nhan su kien nhan co man hinh khong");
             DisplayLine();
             GameSystem.Instance.logicFruit.fruitCurrent.SetPosition(worldPoint);
@@ -85,20 +81,22 @@ public class InputHandler : MonoBehaviour
 
 
 
-
-    private void HandlePositionMouse()
+    //? them radius cua 1 fruit ?
+    private void HandlePositionMouse(float radius)
     {
         mouseWordPoint = Input.mousePosition;
         worldPoint = _camera.ScreenToWorldPoint(mouseWordPoint);
 
         worldPoint.y = GameSystem.Instance.logicFruit.spawnY.transform.position.y;
-        if (worldPoint.x <= limiteLeft.transform.position.x)
+        if (worldPoint.x <= UIManager.Instance.menu.leftWall.position.x + radius)
         {
-            worldPoint.x = limiteLeft.transform.position.x + limitFloat;
+            // worldPoint.x = UIManager.Instance.menu.radiusLeftLimit.transform.position.x;
+            worldPoint.x = UIManager.Instance.menu.leftWall.position.x + radius;
         }
-        else if (worldPoint.x >= limiteRight.transform.position.x)
+        else if (worldPoint.x >= UIManager.Instance.menu.rightWall.position.x - radius)
         {
-            worldPoint.x = limiteRight.transform.position.x - limitFloat;
+            // worldPoint.x = UIManager.Instance.menu.radiusRightLimit.transform.position.x;
+            worldPoint.x = UIManager.Instance.menu.rightWall.position.x - radius;
         }
 
     }

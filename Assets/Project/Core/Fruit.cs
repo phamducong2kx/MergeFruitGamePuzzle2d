@@ -11,6 +11,7 @@ public class Fruit : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D colider;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] public float radius;
     private bool isMerge = false;
     private bool isCollider = false;
     private void Awake()

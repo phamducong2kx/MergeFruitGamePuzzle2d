@@ -187,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 6195592751194804291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.7242, y: -3.6896, z: 0}
+  m_LocalPosition: {x: 8.998, y: -3.6896, z: 0}
   m_LocalScale: {x: 0.29865614, y: 0.29865614, z: 0.29865614}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -280,9 +280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeFruit: 4
+  score: 0
   rb: {fileID: 0}
   colider: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  radius: 0.6
 --- !u!50 &886882326957220564
 Rigidbody2D:
   serializedVersion: 4

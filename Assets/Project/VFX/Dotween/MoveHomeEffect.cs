@@ -11,6 +11,28 @@ public class MoveHomeEffect : MonoBehaviour
 
     private void Awake()
     {
+        SetUpPóitionFruitBegin();
+    }
+    //set up vi tri cho cac fruit
+    public void SetUpPóitionFruitBegin()
+    {
+        //camera
+        Camera cam = Camera.main;
+        //timf kiếm vị trí viewport và convert sang tạo đọ thế giới
+        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, cam.nearClipPlane));
+        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(new Vector3(1, 0.5f, cam.nearClipPlane));
+        foreach (var x in litSpriteFruit)
+        {
+            if (x.transform.position.x <= leftEdge.x)
+            {
+                x.transform.position = new Vector3(leftEdge.x + Random.Range(1f, 2f), x.transform.position.y, 0);
+            }
+            else if (x.transform.position.x >= rightEdge.x)
+            {
+                x.transform.position = new Vector3(rightEdge.x - Random.Range(1f, 2f), x.transform.position.y, 0);
+            }
+        }
+
 
     }
     public void AnimationFruitHome()
